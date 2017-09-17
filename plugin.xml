@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plugin id="cordova-plugin-ipad-multitasking-support" version="0.1.1" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>CCB: Config / Plist Overrides</name>
+    <author>Ralpharoo</author>
+    <description>CCB Config / Plist Overrides</description>
+    <keywords></keywords>
+    <license>MIT</license>
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+	
+	<platform name="android">
+		<config-file parent="manifest/application"  mode="merge">
+            <activity android:launchMode="singleTask">
+            </activity>
+        </config-file>
+		
+		<config-file parent="/manifest" mode="add">
+            <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+            <uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+        </config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.VIBRATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+            <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+        </config-file>
+		
+		<config-file parent="manifest/application"  mode="merge">
+            <activity android:launchMode="singleTask">
+            </activity>
+        </config-file>
+		
+	</platform>
+	
+		
+    <platform name="ios">		
+		
+		<config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>To capture images of your recipes</string>
+        </config-file>
+        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+            <string>To select images for your recipes</string>
+        </config-file>
+		
+		<config-file parent="ITSAppUsesNonExemptEncryption" mode="add" target="*-Info.plist">
+            <false/>
+        </config-file>
+        <config-file parent="ITSAppUsesNonExemptEncryption" mode="overwrite" target="*-Info.plist">
+            <false/>
+        </config-file>
+		
+		<config-file  parent="SocialSharingExcludeActivities" mode="add" target="*-Info.plist">
+            <array>
+                <string>com.apple.UIKit.activity.AssignToContact</string>
+                <string>com.apple.UIKit.activity.CopyToPasteboard</string>
+            </array>
+        </config-file>
+	
+    </platform>
+</plugin>
+
