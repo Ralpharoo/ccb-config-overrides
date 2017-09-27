@@ -10,17 +10,13 @@
     </engines>
 	
 	<platform name="android">
-		<config-file parent="manifest/application"  mode="merge">
-            <activity android:launchMode="singleTask">
-            </activity>
-        </config-file>
 		
 		<config-file parent="/manifest" mode="add">
             <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
             <uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
         </config-file>
 		
-		<config-file target="AndroidManifest.xml" parent="/manifest">
+		<config-file parent="/manifest" mode="merge">
             <uses-permission android:name="android.permission.CAMERA" />
             <uses-permission android:name="android.permission.VIBRATE" />
             <uses-permission android:name="android.permission.INTERNET" />
