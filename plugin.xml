@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="ccb-config-overrides" version="0.1.925" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="ccb-config-overrides" version="0.1.935" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
     <description>CCB Config / Plist Overrides</description>
@@ -14,7 +14,9 @@
 		
 		<config-file target="AndroidManifest.xml" parent="/manifest" mode="add">
 
-            <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+			<uses-sdk android:minSdkVersion="19" />					
+		
+            <!--<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
             <uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
 			
 			<uses-permission android:name="android.permission.VIBRATE" />
@@ -24,13 +26,38 @@
             <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
             <uses-permission android:name="android.permission.BROADCAST_STICKY" />
 
-            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+			
+			<uses-permission android:name="android.permission.CAMERA" />-->
+			
+        </config-file>
+		
+		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
+			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+            <uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+		</edit-config>
+		
+		
+		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-permission" mode="overwrite">
+			<uses-permission android:name="android.permission.VIBRATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+            <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 			
 			<uses-permission android:name="android.permission.CAMERA" />
 			
-        </config-file>
+			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+			<uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
+		</edit-config>
+		
+
+		
 		
 		<!--<edit-config target="AndroidManifest.xml" parent="/manifest">
             
@@ -52,13 +79,8 @@
 		
         </edit-config>-->
 		
-		
-		<config-file target="AndroidManifest.xml" parent="/manifest" mode="add">
-			<uses-sdk android:minSdkVersion="19" android:maxSdkVersion="19" />
-		</config-file>
-
-		<edit-config target="AndroidManifest.xml" parent="/manifest" mode="merge">
-			<uses-sdk android:minSdkVersion="19" android:maxSdkVersion="19" />
+		<edit-config file="AndroidManifest.xml" target="/manifest/uses-sdk" mode="overwrite">
+			<uses-sdk android:minSdkVersion="19"  android:targetSdkVersion="19" />
 		</edit-config>
 		
 		<!--<edit-config target="AndroidManifest.xml" parent="/manifest/application">
