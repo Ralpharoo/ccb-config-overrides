@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="ccb-config-overrides" version="0.1.990" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="ccb-config-overrides" version="0.1.991" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
     <description>CCB Config / Plist Overrides</description>
@@ -11,14 +11,14 @@
 	
 	<platform name="android">
 		
-		<config-file target="AndroidManifest.xml" parent="/manifest" mode="add">
+		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-sdk" mode="merge">
 			<uses-sdk android:minSdkVersion="19"  android:targetSdkVersion="19" />
-			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />	 <!-- This is not appearing? -->		
-        </config-file>	
+		</edit-config>
 		
 		<config-file target="AndroidManifest.xml" parent="/manifest" mode="add">
 			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
             <uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />	 <!-- This is not appearing? -->		
 		</config-file>
 		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
