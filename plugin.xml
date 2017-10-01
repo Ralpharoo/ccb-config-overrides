@@ -45,7 +45,7 @@
 		
 		<!--<edit-config target="AndroidManifest.xml" parent="/manifest/uses-permission" mode="overwrite">
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-			!--<uses-permission tools:node="strict" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />	  This is not appearing? --		
+			<uses-permission tools:node="strict" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />	  This is not appearing?
 		</edit-config>-->
 		
 	</platform>
