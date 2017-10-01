@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="ccb-config-overrides" version="0.1.979" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="ccb-config-overrides" version="0.1.980" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
     <description>CCB Config / Plist Overrides</description>
@@ -34,7 +34,7 @@
 			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 			<uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
 			
-			<uses-permission tools:node="strict" android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="100" />
+			<uses-permission tools:node="strict" android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="100" tools:replace="android:maxSdkVersion" />
 			
 		</edit-config>
 	
