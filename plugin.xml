@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="ccb-config-overrides" version="0.1.971" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="ccb-config-overrides" version="0.1.972" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
     <description>CCB Config / Plist Overrides</description>
@@ -14,7 +14,7 @@
 		<config-file target="AndroidManifest.xml" parent="/manifest" mode="add">
 			<uses-sdk android:minSdkVersion="19"  android:targetSdkVersion="25" />
 			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />	 <!-- This is not appearing? -->		
-			<!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="100" />-->	 <!-- This is not appearing? -->		
+			<uses-permission tools:node="strict" android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="100" />	 <!-- This is not appearing? -->		
         </config-file>	
 		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
@@ -45,7 +45,7 @@
 		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-permission" mode="overwrite">
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-			<uses-permission tools:node="replace" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />	 <!-- This is not appearing? -->		
+			<uses-permission tools:node="strict" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />	 <!-- This is not appearing? -->		
 		</edit-config>
 		
 	</platform>
