@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="ccb-config-overrides" version="0.1.994" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="ccb-config-overrides" version="0.1.995" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
     <description>CCB Config / Plist Overrides</description>
@@ -16,7 +16,7 @@
 		<config-file target="AndroidManifest.xml" parent="/manifest" mode="add">
 			<uses-sdk android:minSdkVersion="19"  android:targetSdkVersion="19" />
 			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-			<uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+			<!--<uses-feature android:name="android.hardware.microphone" android:required="false" />-->
 			
         		<uses-feature android:name="android.hardware.camera" 		android:required="false" /> <!-- Allow to run on devices without camera? -->
         		<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" /> <!-- Allow to run on devices without camera? -->
@@ -26,7 +26,7 @@
 		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
 			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-            		<uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+            		<!--<uses-feature android:name="android.hardware.microphone" android:required="false" />-->
 			
 			
         		<uses-feature android:name="android.hardware.camera" 		android:required="false" /> <!-- Allow to run on devices without camera? -->
