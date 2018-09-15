@@ -16,13 +16,22 @@
 		<config-file target="AndroidManifest.xml" parent="/manifest" mode="add">
 			<uses-sdk android:minSdkVersion="19"  android:targetSdkVersion="19" />
 			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-            <uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+			<uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+			
+        		<uses-feature android:name="android.hardware.camera" 		android:required="false" /> <!-- Allow to run on devices without camera? -->
+        		<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" /> <!-- Allow to run on devices without camera? -->
+			
 			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />	 <!-- This is not appearing? -->		
 		</config-file>
 		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
 			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-            <uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+            		<uses-feature android:name="android.hardware.MICROPHONE" android:required="false" />
+			
+			
+        		<uses-feature android:name="android.hardware.camera" 		android:required="false" /> <!-- Allow to run on devices without camera? -->
+        		<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" /> <!-- Allow to run on devices without camera? -->
+			
 		</edit-config>
 		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-permission" mode="merge">
