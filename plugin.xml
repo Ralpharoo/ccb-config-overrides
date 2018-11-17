@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="ccb-config-overrides" version="0.1.995" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="ccb-config-overrides" version="0.1.996" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
     <description>CCB Config / Plist Overrides</description>
@@ -67,27 +67,24 @@
         <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
             <string>To select images for your recipes</string>
         </config-file>
-		
-	<config-file parent="ITSAppUsesNonExemptEncryption" mode="add" target="*-Info.plist">
+        <config-file parent="UISupportsDocumentBrowser" target="*-Info.plist">
             <false/>
         </config-file>
+		
+	<!--<config-file parent="ITSAppUsesNonExemptEncryption" mode="add" target="*-Info.plist">
+            <false/>
+        </config-file>-->
         <config-file parent="ITSAppUsesNonExemptEncryption" mode="overwrite" target="*-Info.plist">
             <false/>
         </config-file>
 		
-		<config-file  parent="SocialSharingExcludeActivities" mode="add" target="*-Info.plist">
+	<!--<config-file  parent="SocialSharingExcludeActivities" mode="add" target="*-Info.plist">
             <array>
                 <string>com.apple.UIKit.activity.AssignToContact</string>
                 <string>com.apple.UIKit.activity.CopyToPasteboard</string>
             </array>
-        </config-file>
+        </config-file>-->
 	    
-	<config-file parent="UISupportsDocumentBrowser" target="*-Info.plist">
-            <false/>
-        </config-file>
-	    
-	    
-	
     </platform>
 </plugin>
 
