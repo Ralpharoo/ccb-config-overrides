@@ -9,9 +9,6 @@
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
 	
-	<!-- This is not longer building in within PGB -->
-	<preference name="KeyboardDisplayRequiresUserAction" value="false" />
-	
 	<platform name="android">
 		
 		
