@@ -1,90 +1,72 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="ccb-config-overrides" version="0.1.996" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin 
+	id="ccb-config-overrides" 
+	version="0.1.996a" 
+	xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"	
+>
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
     <description>CCB Config / Plist Overrides</description>
     <keywords></keywords>
     <license>MIT</license>
+	
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
+	<engine name="cordova-android" version=">=6.3.0"  />
+        <engine name="android-sdk"     version=">=26" />
     </engines>
 	
 	<platform name="android">
 		
-		
-		
 		<config-file target="AndroidManifest.xml" parent="/manifest" mode="add">
 			<uses-sdk android:minSdkVersion="19"  android:targetSdkVersion="19" />
-			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-			<!--<uses-feature android:name="android.hardware.microphone" android:required="false" />-->
-			
-        		<uses-feature android:name="android.hardware.camera" 		android:required="false" /> <!-- Allow to run on devices without camera? -->
-        		<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" /> <!-- Allow to run on devices without camera? -->
-			
+			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />			
+        		<uses-feature android:name="android.hardware.camera" 		android:required="false" />
+        		<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
 			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />	 <!-- This is not appearing? -->		
 		</config-file>
 		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
-			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-            		<!--<uses-feature android:name="android.hardware.microphone" android:required="false" />-->
-			
-			
-        		<uses-feature android:name="android.hardware.camera" 		android:required="false" /> <!-- Allow to run on devices without camera? -->
-        		<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" /> <!-- Allow to run on devices without camera? -->
-			
+			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />			
+        		<uses-feature android:name="android.hardware.camera" 		android:required="false" />
+        		<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
 		</edit-config>
 		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-permission" mode="merge">
 			<uses-permission android:name="android.permission.VIBRATE" />
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            		<uses-permission android:name="android.permission.INTERNET" />
+            		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-            <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-            <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-			
+            		<uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+            		<uses-permission android:name="android.permission.BROADCAST_STICKY" />
 			<uses-permission android:name="android.permission.CAMERA" />
-			
 			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 			<uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
-			
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-			
 		</edit-config>
-	
-	
+		
 		<edit-config target="AndroidManifest.xml" parent="/manifest/uses-sdk" mode="merge">
 			<uses-sdk android:minSdkVersion="19"  android:targetSdkVersion="19" />
 		</edit-config>
-		
 	</platform>
 	
+	<platform name="ios">		
 		
-    <platform name="ios">		
+		<config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+		    <string>To capture images of your recipes</string>
+		</config-file>
+		<config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+		    <string>To select images for your recipes</string>
+		</config-file>
+		<config-file parent="UISupportsDocumentBrowser" target="*-Info.plist">
+		    <false/>
+		</config-file>
 		
-	<config-file parent="NSCameraUsageDescription" target="*-Info.plist">
-            <string>To capture images of your recipes</string>
-        </config-file>
-        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
-            <string>To select images for your recipes</string>
-        </config-file>
-        <config-file parent="UISupportsDocumentBrowser" target="*-Info.plist">
-            <false/>
-        </config-file>
-		
-	<!--<config-file parent="ITSAppUsesNonExemptEncryption" mode="add" target="*-Info.plist">
-            <false/>
-        </config-file>-->
-        <config-file parent="ITSAppUsesNonExemptEncryption" mode="overwrite" target="*-Info.plist">
-            <false/>
-        </config-file>
-		
-	<!--<config-file  parent="SocialSharingExcludeActivities" mode="add" target="*-Info.plist">
-            <array>
-                <string>com.apple.UIKit.activity.AssignToContact</string>
-                <string>com.apple.UIKit.activity.CopyToPasteboard</string>
-            </array>
-        </config-file>-->
-	    
+		<config-file parent="ITSAppUsesNonExemptEncryption" mode="overwrite" target="*-Info.plist">
+		    <false/>
+		</config-file>
+
     </platform>
 </plugin>
 
