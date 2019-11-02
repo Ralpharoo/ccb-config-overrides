@@ -37,18 +37,7 @@
 			<uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 		</config-file>
-		
-		<!-- net::ERR_CLEARTEXT_NOT_PERMITTED - Needed on 9 to allow unsafe URL -->
-		<config-file target="AndroidManifest.xml" parent="/manifest" mode="merge">
-			<application android:usesCleartextTraffic="true" /> <!-- This is not appearing? -->
-		</config-file>
-		<edit-config target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
-			<application android:usesCleartextTraffic="true" /> 
-		</edit-config>
-		<edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
-        		<application android:usesCleartextTraffic="true"></application>
-    		</edit-config>
-		
+				
 		<!--<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
 			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />			
         		<uses-feature android:name="android.hardware.camera" 		android:required="false" />
