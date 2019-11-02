@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="ccb-config-overrides"
-	version="0.1.997a">
+	version="0.1.997b">
 	
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
@@ -45,6 +45,9 @@
 		<edit-config target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
 			<application android:usesCleartextTraffic="true" /> 
 		</edit-config>
+		<edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
+        		<application android:usesCleartextTraffic="true"></application>
+    		</edit-config>
 		
 		<!--<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
 			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />			
