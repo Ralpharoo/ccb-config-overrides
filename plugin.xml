@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="ccb-config-overrides"
-	version="0.1.997">
+	version="0.1.997a">
 	
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
@@ -39,9 +39,12 @@
 		</config-file>
 		
 		<!-- net::ERR_CLEARTEXT_NOT_PERMITTED - Needed on 9 to allow unsafe URL -->
-		<config-file platform="android" parent="/manifest" mode="merge">
-			<application android:usesCleartextTraffic="true" /> 
+		<config-file target="AndroidManifest.xml" parent="/manifest" mode="merge">
+			<application android:usesCleartextTraffic="true" /> <!-- This is not appearing? -->
 		</config-file>
+		<edit-config target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
+			<application android:usesCleartextTraffic="true" /> 
+		</edit-config>
 		
 		<!--<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
 			<uses-feature android:name="android.hardware.touchscreen" android:required="false" />			
