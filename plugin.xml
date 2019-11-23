@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="ccb-config-overrides"
-	version="0.1.997b">
+	version="0.1.997c">
 	
     <name>CCB: Config / Plist Overrides</name>
     <author>Ralpharoo</author>
@@ -36,6 +36,8 @@
 			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 			<uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			
+		        <uses-permission android:name="android.permission.WAKE_LOCK"/>
 		</config-file>
 				
 		<!--<edit-config target="AndroidManifest.xml" parent="/manifest/uses-feature" mode="merge">
