@@ -1,0 +1,29 @@
+{
+  "name": "ccb-config-overrides",
+  "version": "0.1.997",
+  "description": "",
+  "cordova": {
+    "id": "ccb-config-overrides",
+    "platforms": [
+      "ios", 
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ralpharoo/ccb-config-overrides.git"
+  },
+  "keywords": [],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Ralpharro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ralpharoo/ccb-config-overrides/issues"
+  },
+  "homepage": "https://github.com/Ralpharoo/ccb-config-overrides#readme"
+}
